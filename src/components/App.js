@@ -55,7 +55,7 @@ class App extends Component {
     e.preventDefault();
     let newItem = this.state.currentItem;
 
-    if (newItem.food !== '' && newItem.result !== '') {
+    if (newItem.food !== '' && newItem.result !== 0) {
       let items = [...this.state.items, newItem];
 
       this.setState({
