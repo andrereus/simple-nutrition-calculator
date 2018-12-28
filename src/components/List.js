@@ -6,7 +6,7 @@ class List extends Component {
       <ul className="list">
         {this.props.entries.map(item => (
           <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
-            <span class="bold">{item.food}:</span> {item.result}
+            <span className="bold">{item.food}:</span> {item.result}
           </li>
         ))}
       </ul>

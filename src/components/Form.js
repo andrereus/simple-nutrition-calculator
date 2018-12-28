@@ -23,7 +23,7 @@ class Form extends Component {
             value={nutrition}
             onChange={this.props.handleInput}
           />
-          <span class="bold"> = {result}</span>
+          <span className="bold"> = {result}</span>
           <button type="submit">Add</button>
         </form>
       </div>
