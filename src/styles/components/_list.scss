@@ -1,0 +1,24 @@
+.list__button {
+    background-color: #ff4f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+
+    &:hover {
+        background-color: #cc3f00;
+    }
+}
+
+.list__container {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+
+    td {
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+    }
+}

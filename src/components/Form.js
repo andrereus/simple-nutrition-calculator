@@ -5,26 +5,41 @@ class Form extends Component {
     let {food, weight, nutrition, result} = this.props.currentItem;
 
     return (
-      <div className="form">
+      <div className="form__container">
         <form onSubmit={this.props.addItem}>
-          <input type="text" name="food" placeholder="Food name" value={food} onChange={this.props.handleInput} />
-          <input
-            type="number"
-            name="weight"
-            placeholder="Weight in g"
-            value={weight}
-            onChange={this.props.handleInput}
-          />
-          <br />
-          <input
-            type="number"
-            name="nutrition"
-            placeholder="Nutrition value per 100g"
-            value={nutrition}
-            onChange={this.props.handleInput}
-          />
-          <span className="bold"> = {result}</span>
-          <button type="submit">Add</button>
+          <div className="form__input">
+            <input
+              type="text"
+              name="food"
+              placeholder="Food name"
+              value={food}
+              onChange={this.props.handleInput}
+              className="form__food"
+              autoComplete="off"
+            />
+            <input
+              type="number"
+              name="weight"
+              placeholder="Weight in g"
+              value={weight}
+              onChange={this.props.handleInput}
+              className="form__weight"
+              autoComplete="off"
+            />
+            <input
+              type="number"
+              name="nutrition"
+              placeholder="Value per 100g"
+              value={nutrition}
+              onChange={this.props.handleInput}
+              className="form__nutrition"
+              autoComplete="off"
+            />
+          </div>
+          <div className="form__action">
+            <span className="form__result">= {result}</span>
+            <button type="submit" className="form__button">Add</button>
+          </div>
         </form>
       </div>
     );

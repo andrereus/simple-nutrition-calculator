@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../styles/App.scss';
 import Form from './Form';
 import List from './List';
 
@@ -33,7 +32,8 @@ class App extends Component {
     let newResult = result;
     
     if (weightInput !== '' && nutritionInput !== '') {
-      newResult = (Number(weightInput) * Number(nutritionInput)) / 100;
+      let calcResult = (Number(weightInput) * Number(nutritionInput)) / 100;
+      newResult = calcResult.toFixed(2);
     } else {
       newResult = 0;
     }
@@ -83,7 +83,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app__container">
+        <h1 className="app__title">Simple Nutrition Calculator</h1>
         <Form addItem={this.addItem} handleInput={this.handleInput} currentItem={this.state.currentItem} />
         <List entries={this.state.items} deleteItem={this.deleteItem} />
       </div>

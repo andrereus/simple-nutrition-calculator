@@ -3,13 +3,17 @@ import React, {Component} from 'react';
 class List extends Component {
   render() {
     return (
-      <ul className="list">
-        {this.props.entries.map(item => (
-          <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
-            <span className="bold">{item.food}:</span> {item.result}
-          </li>
-        ))}
-      </ul>
+      <table className="list__container">
+        <tbody>
+          {this.props.entries.map(item => (
+            <tr key={item.key}>
+              <td><span className="bold">{item.food}</span></td>
+              <td>{item.result}</td>
+              <td><button className="list__button" onClick={() => this.props.deleteItem(item.key)}>X</button></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     );
   }
 }
