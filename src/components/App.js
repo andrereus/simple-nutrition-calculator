@@ -24,9 +24,20 @@ class App extends Component {
 
   componentDidMount() {
     let loadedState = JSON.parse(localStorage.getItem('savedState'));
+    let {items} = loadedState;
 
+    // Override currentItem?
     if (loadedState) {
-      this.setState(loadedState);
+      this.setState({
+        items: items,
+        currentItem: {
+          food: '',
+          weight: '',
+          nutrition: '',
+          result: 0,
+          key: ''
+        }
+      });
     }
   }
 
@@ -35,16 +46,14 @@ class App extends Component {
   }
 
   handleInput(e) {
-    let {food, weight, nutrition, result} = this.state.currentItem;
-
+    let {food, weight, nutrition} = this.state.currentItem;
     let foodInput = e.target.name === 'food' ? e.target.value : food;
     let weightInput = e.target.name === 'weight' ? e.target.value : weight;
     let nutritionInput = e.target.name === 'nutrition' ? e.target.value : nutrition;
-
-    let newResult = result;
+    let newResult;
 
     if (weightInput !== '' && nutritionInput !== '') {
-      let calcResult = (Number(weightInput) * Number(nutritionInput)) / 100;
+      let calcResult = Number(weightInput) / 100 * Number(nutritionInput);
       newResult = calcResult.toFixed(2);
     } else {
       newResult = 0;
