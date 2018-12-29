@@ -38,7 +38,9 @@ class Form extends Component {
           </div>
           <div className="form__action">
             <span className="form__result">= {result}</span>
-            <button type="submit" className="form__button">Add</button>
+            <button type="submit" className="form__button">
+              Add
+            </button>
           </div>
         </form>
       </div>

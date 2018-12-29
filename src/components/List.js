@@ -7,9 +7,15 @@ class List extends Component {
         <tbody>
           {this.props.entries.map(item => (
             <tr key={item.key}>
-              <td><span className="bold">{item.food}</span></td>
+              <td>
+                <span className="bold">{item.food}</span>
+              </td>
               <td>{item.result}</td>
-              <td><button className="list__button" onClick={() => this.props.deleteItem(item.key)}>X</button></td>
+              <td>
+                <button className="list__button" onClick={() => this.props.deleteItem(item.key)}>
+                  X
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
