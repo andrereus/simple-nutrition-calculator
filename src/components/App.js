@@ -22,6 +22,18 @@ class App extends Component {
     this.deleteItem = this.deleteItem.bind(this);
   }
 
+  componentDidMount() {
+    let loadedState = JSON.parse(localStorage.getItem('savedState'));
+
+    if (loadedState) {
+      this.setState(loadedState);
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('savedState', JSON.stringify(this.state));
+  }
+
   handleInput(e) {
     let {food, weight, nutrition, result} = this.state.currentItem;
 
@@ -30,7 +42,7 @@ class App extends Component {
     let nutritionInput = e.target.name === 'nutrition' ? e.target.value : nutrition;
 
     let newResult = result;
-    
+
     if (weightInput !== '' && nutritionInput !== '') {
       let calcResult = (Number(weightInput) * Number(nutritionInput)) / 100;
       newResult = calcResult.toFixed(2);
