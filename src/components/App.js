@@ -27,7 +27,6 @@ class App extends Component {
     let loadedState = JSON.parse(localStorage.getItem('savedState'));
     let {items} = loadedState;
 
-    // Override currentItem?
     if (loadedState) {
       this.setState({
         items: items,
