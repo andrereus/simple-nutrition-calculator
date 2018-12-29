@@ -25,9 +25,10 @@ class App extends Component {
 
   componentDidMount() {
     let loadedState = JSON.parse(localStorage.getItem('savedState'));
-    let {items} = loadedState;
 
     if (loadedState) {
+      let {items} = loadedState;
+      
       this.setState({
         items: items,
         currentItem: {
