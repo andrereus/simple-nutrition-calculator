@@ -20,6 +20,7 @@ class App extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.resetAll = this.resetAll.bind(this);
   }
 
   componentDidMount() {
@@ -102,12 +103,32 @@ class App extends Component {
     });
   }
 
+  resetAll(e) {
+    e.preventDefault();
+    let reset = confirm('Reset app?');
+
+    if (reset == true) {
+      localStorage.clear();
+
+      this.setState({
+        items: [],
+        currentItem: {
+          food: '',
+          weight: '',
+          nutrition: '',
+          result: 0,
+          key: ''
+        }
+      });
+    }
+  }
+
   render() {
     return (
       <div className="app__container">
         <h1 className="app__title">Simple Nutrition Calculator</h1>
         <Form addItem={this.addItem} handleInput={this.handleInput} currentItem={this.state.currentItem} />
-        <List entries={this.state.items} deleteItem={this.deleteItem} />
+        <List items={this.state.items} deleteItem={this.deleteItem} resetAll={this.resetAll} />
       </div>
     );
   }

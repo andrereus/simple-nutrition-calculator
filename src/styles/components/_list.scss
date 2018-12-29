@@ -9,7 +9,7 @@
   }
 }
 
-.list__button {
+.list__delete {
   background-color: #ff4f00;
   color: #fff;
   border: none;
@@ -20,5 +20,15 @@
 
   &:hover {
     background-color: #cc3f00;
+  }
+}
+
+.list__reset {
+  float: right;
+  text-decoration: none;
+  color: #0066ff;
+
+  &:hover {
+    color: #003399;
   }
 }
