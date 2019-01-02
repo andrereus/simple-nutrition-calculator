@@ -40,7 +40,7 @@ class Form extends Component {
             <input
               type="number"
               name="nutrition"
-              placeholder={nutrient.length > 0 ? nutrient + ' per 100g' : 'Value per 100g'}
+              placeholder={nutrient ? nutrient + ' per 100g' : 'Value per 100g'}
               value={nutrition}
               onChange={this.props.handleInput}
               className="form__nutrition"
