@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {
       items: [],
       currentItem: {
+        nutrient: '',
         food: '',
         weight: '',
         nutrition: '',
@@ -27,11 +28,12 @@ class App extends Component {
     let loadedState = JSON.parse(localStorage.getItem('savedState'));
 
     if (loadedState) {
-      let {items} = loadedState;
+      let {items, currentItem: {nutrient}} = loadedState;
       
       this.setState({
         items: items,
         currentItem: {
+          nutrient: nutrient,
           food: '',
           weight: '',
           nutrition: '',
@@ -47,23 +49,29 @@ class App extends Component {
   }
 
   handleInput(e) {
-    let {food, weight, nutrition} = this.state.currentItem;
-    let foodInput = e.target.name === 'food' ? e.target.value : food;
-    let weightInput = e.target.name === 'weight' ? e.target.value : weight;
-    let nutritionInput = e.target.name === 'nutrition' ? e.target.value : nutrition;
+    let {nutrient, food, weight, nutrition} = this.state.currentItem;
+
+    let input = {
+      nutrient: e.target.name === 'nutrient' ? e.target.value : nutrient,
+      food: e.target.name === 'food' ? e.target.value : food,
+      weight: e.target.name === 'weight' ? e.target.value : weight,
+      nutrition: e.target.name === 'nutrition' ? e.target.value : nutrition
+    };
+
     let newResult;
 
-    if (weightInput !== '' && nutritionInput !== '') {
-      let calcResult = Number(weightInput) / 100 * Number(nutritionInput);
+    if (input.weight !== '' && input.nutrition !== '') {
+      let calcResult = Number(input.weight) / 100 * Number(input.nutrition);
       newResult = calcResult.toFixed(2);
     } else {
       newResult = 0;
     }
 
     let currentItem = {
-      food: foodInput,
-      weight: weightInput,
-      nutrition: nutritionInput,
+      nutrient: input.nutrient,
+      food: input.food,
+      weight: input.weight,
+      nutrition: input.nutrition,
       result: newResult,
       key: Date.now()
     };
@@ -83,6 +91,7 @@ class App extends Component {
       this.setState({
         items: items,
         currentItem: {
+          nutrient: newItem.nutrient,
           food: '',
           weight: '',
           nutrition: '',
@@ -113,6 +122,7 @@ class App extends Component {
       this.setState({
         items: [],
         currentItem: {
+          nutrient: '',
           food: '',
           weight: '',
           nutrition: '',
@@ -128,7 +138,7 @@ class App extends Component {
       <div className="app__container">
         <h1 className="app__title">Simple Nutrition Calculator</h1>
         <Form addItem={this.addItem} handleInput={this.handleInput} currentItem={this.state.currentItem} />
-        <List items={this.state.items} deleteItem={this.deleteItem} resetAll={this.resetAll} />
+        <List items={this.state.items} deleteItem={this.deleteItem} resetAll={this.resetAll} nutrient={this.state.currentItem.nutrient}/>
       </div>
     );
   }
