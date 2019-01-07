@@ -1,0 +1,31 @@
+.main__container {
+  max-width: 576px;
+  margin: 0 auto;
+  padding: 10px 0;
+  font-family: sans-serif;
+}
+
+.main__header {
+  @include clearfix();
+}
+
+.main__title {
+  margin: 10px 0 15px;
+  font-weight: bold;
+  float: left;
+  color: #000;
+
+  @media (max-width: 576px) {
+    margin-left: 10px;
+  }
+}
+
+.main__about {
+  float: right;
+  padding: 10px;
+  color: #ccc;
+
+  &:hover {
+    color: #aaa;
+  }
+}

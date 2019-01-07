@@ -135,8 +135,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app__container">
-        <h1 className="app__title">Simple Nutrition Calculator</h1>
+      <div className="app__wrapper">
         <Form addItem={this.addItem} handleInput={this.handleInput} currentItem={this.state.currentItem} />
         <List items={this.state.items} deleteItem={this.deleteItem} resetAll={this.resetAll} nutrient={this.state.currentItem.nutrient}/>
       </div>
