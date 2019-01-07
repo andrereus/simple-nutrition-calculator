@@ -1,5 +1,7 @@
-.about__wrapper {
-  padding: 0 10px;
+@media (max-width: 576px) {
+  .about__wrapper {
+    margin: 0 10px;
+  }
 }
 
 .about__title {
