@@ -10,11 +10,11 @@ class Main extends Component {
         <div className="main__container">
           <div className="main__header">
             <Link to="/"><h1 className="main__title">Simple Nutrition Calculator</h1></Link>
-            <Link to="/about/"><a className="main__about">About</a></Link>
+            <Link to="/about"><a className="main__about">About</a></Link>
           </div>
 
           <Route path="/" exact component={App} />
-          <Route path="/about/" component={About} />
+          <Route path="/about" component={About} />
         </div>
       </Router>
     );
