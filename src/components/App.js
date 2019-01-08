@@ -61,7 +61,7 @@ class App extends Component {
     let newResult;
 
     if (input.weight !== '' && input.nutrition !== '') {
-      let calcResult = Number(input.weight) / 100 * Number(input.nutrition);
+      let calcResult = Number(input.weight) * Number(input.nutrition) / 100;
       newResult = calcResult.toFixed(2);
     } else {
       newResult = 0;
