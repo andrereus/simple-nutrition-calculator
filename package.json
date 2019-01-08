@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel src/index.html --open",
     "build": "parcel build src/index.html --out-dir build --public-url ./",
-    "deploy": "cd build && now"
+    "deploy": "cd build && now -A ../now.json"
   },
   "author": "Andre Reus",
   "license": "UNLICENSED",
