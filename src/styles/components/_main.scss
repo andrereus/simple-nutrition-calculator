@@ -6,26 +6,29 @@
 }
 
 .main__header {
-  @include clearfix();
-}
-
-.main__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 10px 0 15px;
-  font-weight: bold;
-  float: left;
-  color: #000;
 
-  @media (max-width: 576px) {
-    margin-left: 10px;
+  a {
+    text-decoration: none;
   }
 }
 
 .main__about {
-  float: right;
   padding: 10px;
   color: #ccc;
 
   &:hover {
     color: #aaa;
+  }
+}
+
+.main__logo {
+  max-width: 150px;
+
+  @media (max-width: 576px) {
+    margin-left: 10px;
   }
 }

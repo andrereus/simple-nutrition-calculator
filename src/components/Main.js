@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import App from './App';
 import About from './About';
+import Logo from '../assets/logo.png';
 
 class Main extends Component {
   render() {
@@ -9,7 +10,7 @@ class Main extends Component {
       <Router>
         <div className="main__container">
           <div className="main__header">
-            <Link to="/"><h1 className="main__title">Simple Nutrition Calculator</h1></Link>
+            <Link to="/"><img src={Logo} className="main__logo" alt="Simple Nutrition Calculator"/></Link>
             <Link to="/about"><a className="main__about">About</a></Link>
           </div>
 
