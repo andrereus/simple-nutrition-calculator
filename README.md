@@ -13,6 +13,10 @@ npm run dev
 ```
 
 ```
+npm run dev:pwa
+```
+
+```
 npm run build
 ```
 
