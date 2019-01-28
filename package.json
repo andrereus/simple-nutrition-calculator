@@ -4,7 +4,8 @@
   "description": "Simple Nutrition Calculator",
   "scripts": {
     "dev": "parcel src/index.html --open",
-    "build": "parcel build src/index.html --out-dir build --public-url ./",
+    "dev:pwa": "workbox generateSW workbox-config-dist.js",
+    "build": "parcel build src/index.html --out-dir build --public-url ./ && workbox generateSW workbox-config-build.js",
     "deploy": "cd build && now -A ../now.json"
   },
   "author": "Andre Reus",

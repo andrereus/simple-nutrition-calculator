@@ -11,7 +11,7 @@ class Main extends Component {
         <div className="main__container">
           <div className="main__header">
             <Link to="/"><img src={Logo} className="main__logo" alt="Simple Nutrition Calculator"/></Link>
-            <Link to="/about"><a className="main__about">About</a></Link>
+            <Link to="/about"><span className="main__about">About</span></Link>
           </div>
 
           <Route path="/" exact component={App} />
