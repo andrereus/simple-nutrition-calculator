@@ -4,6 +4,10 @@
     {
       "src": "/about",
       "dest": "/index.html"
+    },
+    {
+      "src": "/install",
+      "dest": "/index.html"
     }
   ]
 }
