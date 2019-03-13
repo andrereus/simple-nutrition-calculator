@@ -27,6 +27,10 @@
 }
 
 @media (max-width: 576px) {
+  .main__navigation {
+    margin-right: 10px;
+  }
+
   .main__logo {
       margin-left: 10px;
   }

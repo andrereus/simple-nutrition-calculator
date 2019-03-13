@@ -12,7 +12,7 @@ class Main extends Component {
         <div className="main__container">
           <div className="main__header">
             <Link to="/"><img src={Logo} className="main__logo" alt="Simple Nutrition Calculator"/></Link>
-            <div>
+            <div className="main__navigation">
               <Link to="/install"><span className="main__install">Install</span></Link>
               <Link to="/about"><span className="main__about">About</span></Link>
             </div>

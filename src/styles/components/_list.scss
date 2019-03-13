@@ -1,11 +1,11 @@
 .list__container {
   width: 100%;
   border-top: 1px solid #ccc;
-  margin-top: 10px;
+  margin-top: 20px;
 
   td {
     border-bottom: 1px solid #ccc;
-    padding: 10px;
+    padding: 12px 10px;
   }
 }
 
@@ -31,8 +31,14 @@
   float: right;
   text-decoration: none;
   color: #0071bc;
+  padding: 5px 0;
 
   &:hover {
     color: #0059ba;
   }
+}
+
+.list__eat {
+  display: block;
+  margin: 40px auto 20px;
 }

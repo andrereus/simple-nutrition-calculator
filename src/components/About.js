@@ -9,6 +9,7 @@ class About extends Component {
     return (
       <div className="about__wrapper">
         <h2 className="about__title">Simple Nutrition Calculator</h2>
+        <p>Progressive Web App to calculate with any nutrient.</p><br />
         <p><span className="bold">Author:</span> Andre Reus</p><br />
         <p>
           <span className="bold">Contact: </span>

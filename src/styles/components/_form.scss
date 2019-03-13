@@ -10,6 +10,7 @@
     background: #eee;
     margin: 2px 1px 0;
     border-radius: 5px;
+    font-size: 18px;
 
     @media (max-width: 576px) {
       border-radius: 0;
@@ -21,10 +22,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .form__result {
+  font-size: 18px;
   font-weight: bold;
   padding: 10px;
 }
