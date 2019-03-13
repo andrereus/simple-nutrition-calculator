@@ -8,10 +8,10 @@ class About extends Component {
 
     return (
       <div className="about__wrapper">
-        <h2 className="about__title">About</h2>
+        <h2 className="about__title">Simple Nutrition Calculator</h2>
         <p><span className="bold">Author:</span> Andre Reus</p><br />
         <p>
-          <span className="bold">E-Mail: </span>
+          <span className="bold">Contact: </span>
           {part1}@<span className="hidden">null</span>
           {part2}.{part3}
         </p>
