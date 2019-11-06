@@ -26,6 +26,10 @@ npm run dev:pwa
 npm run build
 
 npm run deploy
+```
 
+Optional:
+
+```
 now alias https://build-name.now.sh domain-name.com
 ```

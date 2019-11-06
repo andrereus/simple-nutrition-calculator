@@ -6,7 +6,7 @@
     "dev": "parcel src/index.html --open",
     "dev:pwa": "workbox generateSW workbox-config-dist.js",
     "build": "parcel build src/index.html --out-dir build --public-url ./ && workbox generateSW workbox-config-build.js",
-    "deploy": "cd build && now -A ../now.json"
+    "deploy": "cd build && now -A ../now.json --prod"
   },
   "author": "Andre Reus",
   "license": "UNLICENSED",
