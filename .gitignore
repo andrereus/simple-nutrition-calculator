@@ -1,5 +1,11 @@
-node_modules/
-dist/
-build/
-.cache/
+.DS_Store
+
 .idea
+.vscode
+
+node_modules
+.env
+
+.cache
+build
+dist
