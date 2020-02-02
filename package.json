@@ -12,9 +12,11 @@
     "deploy": "cd build && now -A ../now.json --prod"
   },
   "dependencies": {
+    "firebase": "^7.8.0",
     "lodash": "^4.17.15",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-firebaseui": "^4.1.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {

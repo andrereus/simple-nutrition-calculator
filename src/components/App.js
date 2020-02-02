@@ -1,6 +1,28 @@
 import React, {Component} from 'react';
 import Form from './Form';
 import List from './List';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+
+var firebaseConfig = {
+  apiKey: 'AIzaSyCTEAoeq10j_T_AfeOcCBtYFTOx8l_0lJc',
+  authDomain: 'simple-nutrition-calculator.firebaseapp.com',
+  databaseURL: 'https://simple-nutrition-calculator.firebaseio.com',
+  projectId: 'simple-nutrition-calculator',
+  storageBucket: 'simple-nutrition-calculator.appspot.com',
+  messagingSenderId: '234023097377',
+  appId: '1:234023097377:web:ce3f2f3424ef552f71ff60',
+  measurementId: 'G-N6X8GVNCVR'
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const uiConfig = {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ]
+};
 
 class App extends Component {
   constructor() {
@@ -136,6 +158,7 @@ class App extends Component {
   render() {
     return (
       <div className="app__wrapper">
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
         <Form addItem={this.addItem} handleInput={this.handleInput} currentItem={this.state.currentItem} />
         <List items={this.state.items} deleteItem={this.deleteItem} resetAll={this.resetAll} nutrient={this.state.currentItem.nutrient}/>
       </div>
