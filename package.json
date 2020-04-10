@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "parcel src/index.html --open",
     "dev:pwa": "workbox generateSW workbox-config-dist.js",
-    "build": "parcel build src/index.html --out-dir build --public-url ./ && npx workbox generateSW workbox-config-build.js",
+    "build": "parcel build src/index.html --out-dir build --public-url ./ && npx workbox-cli generateSW workbox-config-build.js",
     "deploy": "cd build && now -A ../now.json --prod"
   },
   "dependencies": {
