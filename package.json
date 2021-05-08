@@ -12,7 +12,7 @@
     "deploy": "cd build && now -A ../now.json --prod"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^4.3.1"
